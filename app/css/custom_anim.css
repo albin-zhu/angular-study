@@ -1,0 +1,25 @@
+.main-nav.navbar-transparent{
+  padding: 0 0;
+  background: rgba(0, 0, 0, .5);
+  box-shadow: none;
+  border-bottom: 1px solid rgba(255,255,255,.7);
+    -webkit-transition:all .5s ease-in;
+  transition:all .5s ease-in;
+}
+
+.carousel-top {
+    position:relative;
+    top: -40px;
+}
+
+.main-nav{
+  box-shadow:none;
+  border-radius:0;
+  width:100%;
+  margin:0;
+  padding:0;
+  border-bottom: 1px solid rgba(0,0,0,.4);
+  -webkit-transition:all .5s ease-out;
+  transition:all .5s ease-out;
+  z-index:999;
+}
