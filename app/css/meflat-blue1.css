@@ -726,6 +726,7 @@ a:focus,
 
 #projects-container {
     margin:0 auto;
+    visibility:hidden;
 }
 
 #projects-container .project-item{
@@ -734,9 +735,22 @@ a:focus,
     margin:0;
     width:320px;
 	margin-bottom:25px;
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+	opacity:1;
+	filter:alpha(opacity=100);
 	overflow:hidden;
 }
 
+#projects-container .project-item.filtered{
+	-moz-transform: scale(0);
+	-ms-transform: scale(0);
+    transform:scale(0);
+	opacity:0;
+	filter:alpha(opacity=0);
+}
 
 .project-item:hover{
 	cursor:pointer;
@@ -1393,36 +1407,4 @@ a:focus,
 	.jumbotron {
 		min-height:660px;
 	}
-}
-
-.project-item.ng-enter {
-    opacity: 0;
-    transform: scale(0);
-    transition: all 0.7s ease-in;
-}
-
-.project-item.ng-enter-stagger{
-    transition-delay: 0.1s;
-}
-
-.project-item.ng-enter-active {
-    opacity: 1;
-    transform: scale(1);
-    transition: all 0.7s ease-in;
-}
-
-.project-item.ng-leave-active{
-    opacity: 0;
-    transform: scale(0);
-    transition: all 0.7s ease-in;
-}
-
-.project-item.ng-leave-stagger{
-    transition-delay: 0.1s;
-}
-
-.project-item.ng-leave {
-    opacity: 1;
-    transform: scale(1);
-    transition: all 0.7s ease-in;
 }

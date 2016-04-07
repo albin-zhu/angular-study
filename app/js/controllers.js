@@ -43,5 +43,17 @@ ctrls.controller('WelcomeCtrl', ['$scope', 'DataProxy', function($scope, DataPro
         $scope.noWrapSlides = false;
         $scope.active = 0;
         $scope.whatido = carousel.whatido;
+        
     });
+
+    DataProxy.get({act:"articles"}, function(data){
+         $scope.articles = data.articles;
+         $('#projects-container').masonry('reload');
+    });
+
+    $scope.setQuery = function(q) {
+        $scope.query = q;
+    }
+  
+    setTimeout(on_ng_ready, 1000);
 }]);

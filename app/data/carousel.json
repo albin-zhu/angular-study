@@ -22,7 +22,7 @@
     }
   ],
   "whatido": {
-    "title": "养家的活",
+    "title": "What I Do",
     "subtitle": "除非你有个有钱的爹，不然还是先干好养家的活，再去折腾吧！",
     "datas": [
       {
@@ -32,12 +32,12 @@
       },
       {
         "title": "码农",
-        "img": "img/code.jpg",
+        "img": "img/service2.png",
         "content": "所谓术业有专攻，我好像没有，如果非要算的话，写代码算。如果非要选一个最喜欢的语言，elisp是一个，python, go, nodejs。等等这好像不止一个，我比较博爱，没办法，选不出。"
       },
       {
         "title": "极客",
-        "img": "img/geek.jpg",
+        "img": "img/service1.png",
         "content": "这个词对我来说有点牵强。喜欢摄影，喜欢游戏，喜欢视听设备，好像码代码的钱都没了。"
       }
     ]
