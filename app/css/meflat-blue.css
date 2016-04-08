@@ -731,8 +731,8 @@ a:focus,
 #projects-container .project-item{
     display:block;
     position:relative;
-    margin:0;
-    width:320px;
+    margin:10px;
+    max-width:320px;
 	margin-bottom:25px;
 	overflow:hidden;
 }
@@ -900,7 +900,7 @@ a:focus,
     margin-bottom:40px;
 }
 
-#project-modal .close{
+#myclose{
     float:none;
     font-size:52px;
     line-height:52px;
@@ -914,7 +914,7 @@ a:focus,
     transition:all 0.2s ease-out;
 }
 
-#project-modal .close:hover{
+#myclose:hover{
     opacity:.8;
 }
 
@@ -1395,34 +1395,3 @@ a:focus,
 	}
 }
 
-.project-item.ng-enter {
-    opacity: 0;
-    transform: scale(0);
-    transition: all 0.7s ease-in;
-}
-
-.project-item.ng-enter-stagger{
-    transition-delay: 0.1s;
-}
-
-.project-item.ng-enter-active {
-    opacity: 1;
-    transform: scale(1);
-    transition: all 0.7s ease-in;
-}
-
-.project-item.ng-leave-active{
-    opacity: 0;
-    transform: scale(0);
-    transition: all 0.7s ease-in;
-}
-
-.project-item.ng-leave-stagger{
-    transition-delay: 0.1s;
-}
-
-.project-item.ng-leave {
-    opacity: 1;
-    transform: scale(1);
-    transition: all 0.7s ease-in;
-}

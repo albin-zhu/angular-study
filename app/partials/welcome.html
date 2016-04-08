@@ -132,44 +132,31 @@
 		<section id="portfolio" class="gray-bg padding-top-bottom">			
 			<div class="container">			
 				<header class="section-header text-center">				
-					<h1 class="scrollimation scale-in">My Works</h1>
-					<p>I've worked with many serious brands in the Design and Code industry.<br/>See a collection of works I am proud of!</p>				
+					<h1 class="scrollimation scale-in">My Notes</h1>
+					<p>没事记点东西</p>				
 				</header>				
 				<!--==== Portfolio Filters ====-->
 				<div id="filter-works">
 					<ul>
-						<li class="active scrollimation fade-right d1">
-							<button ng-click="setQuery('test')">All</button>
+						<li ng-repeat="cat in cats">
+							<button ng-click="setQuery('cat', cat)">{{cat}}</button>
 						</li>
-						<li class="scrollimation fade-right">
-							<button ng-click="setQuery('')">Mock-Ups</button>
-						</li>
-						<li class="scrollimation fade-left">
-							<button ng-click="setQuery('*')">Icons</button>
-						</li>
-						<li class="scrollimation fade-left d1">
-							<button ng-click="setQuery('*')">UI Kits</button>
+						<li>
+							<button ng-click="setQuery('cat', '')">ALL</button>
 						</li>
 					</ul>
 				</div><!--End portfolio filters -->				
 			</div><!--End portfolio header -->			
 			<div class="container masonry-wrapper">			
-				<div id="projects-container">
-					<article class="project-item mock-up" ng-repeat="item in articles | filter:query">						
-						<img class="img-responsive project-image" ng-src="{{item.imgs[0]}}"  alt="">
-						<div class="hover-mask">
-							<h2 class="project-title">{{item.title}}</h2><!--Project Title -->
-							<p>{{item.category}}</p><!--Project Subtitle -->
+				<div id="projects-container" masonry>
+					<article class="project-item mock-up masonry-brick" ng-repeat="item in orgs | filter:query">						
+						<img class="img-responsive project-image" ng-if="item.imgs.length > 0" ng-src="{{item.imgs[0]}}"  alt="">
+						<div class="img-responsive project-image img_holder_1" ng-if="item.imgs.length <= 0">
+							<h2 class="project-title">{{item.title}}</h2>
 						</div>
-						
-						<!--==== Project Preview HTML ====-->
-						
-						<div class="sr-only project-description" 
-							data-category="{{item.category}}" 
-							data-date="{{item.date}}" 
-							data-images="{{item.imgs.toString()}}">
-							{{item.tocHTML}}
-							<p class="text-right"><a class="btn btn-meflat icon-right" href="{{item.url}}">Read More<i class="fa fa-arrow-right"></i></a></p>
+						<div class="hover-mask" ng-click="open(item)">
+							<h2 class="project-title">{{item.title}}</h2><!--Project Title -->
+							<p ng-click="open(item)">{{item.cat}}</p><!--Project Subtitle -->
 						</div>
 						
 					</article>
@@ -239,9 +226,7 @@
 						</ul>
 					</div>
 					
-					<div class="col-sm-6 text-right">
-						<p>&copy;2014 Me Flat Theme by <a href="http://q-themes.net/" target="_blank">Qthemes</a></p>
-					</div>
+					
 					
 				</div>
 				

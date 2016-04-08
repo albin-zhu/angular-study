@@ -35,7 +35,7 @@ ctrls.controller('AlertDemoCtrl', ['$scope', function($scope){
     }
 }]);
 
-ctrls.controller('WelcomeCtrl', ['$scope', 'DataProxy', function($scope, DataProxy) {
+ctrls.controller('WelcomeCtrl', ['$scope', 'DataProxy', '$uibModal', function($scope, DataProxy, $uibModal) {
     $scope.active = 0;
     DataProxy.get({act:"carousel"}, function(carousel){
         $scope.slides = carousel.slides;
@@ -46,14 +46,73 @@ ctrls.controller('WelcomeCtrl', ['$scope', 'DataProxy', function($scope, DataPro
         
     });
 
-    DataProxy.get({act:"articles"}, function(data){
+    DataProxy.get({act:"data"}, function(data){
          $scope.articles = data.articles;
-         $('#projects-container').masonry('reload');
+         $scope.cats = data.cats;
+         $scope.tags = data.tags;
+         $scope.years = data.years;
+         $scope.orgs = data.orgs;
+         
     });
 
-    $scope.setQuery = function(q) {
-        $scope.query = q;
+    $scope.setQuery = function(a, v) {
+        $scope.query = {};
+        $scope.query[a] = v;
+    }
+
+    $scope.open = function(data) {
+        var modalInstance = $uibModal.open({
+            animation: true,
+            templateUrl: "partials/preview.html",
+            controller: "ModalCtrl",
+            resolve: {
+                items: function () {
+                    return data;
+                }
+            }
+        });
     }
   
     setTimeout(on_ng_ready, 1000);
 }]);
+
+
+ctrls.controller('ModalCtrl', ['$scope', 'items', function($scope, items){
+    $scope.item = items;
+    setTimeout(function(){
+                $('.screen.flexslider').flexslider({
+                    prevText: '<i class="fa fa-angle-left"></i>',
+                    nextText: '<i class="fa fa-angle-right"></i>',
+                    slideshowSpeed: 3000,
+                    animation: 'slide',
+                    controlNav: false,
+                    pauseOnAction: false, 
+                    pauseOnHover: true,
+                    start: function(){
+                        $('#project-modal .screen')
+                        .addClass('done')
+                        .prev('.loader').fadeOut();
+                    }
+                });
+            },1000);
+}])
+
+ctrls.controller('ArticleCtrl', ['$scope', '$routeParams', '$http', function($scope, $routeParams, $http){
+    $http({
+        method: 'GET',
+        url: 'orgs/' + $routeParams.cat + '/' + $routeParams.org
+    }).then(function successCallback(code) {
+        var orgParser = new Org.Parser();
+        try {
+            $("#result").html(orgParser.parse(code.data).convert(Org.ConverterHTML, {
+                translateSymbolArrow: true
+            }).toString());
+            prettyPrint();
+        } catch (x) {
+           $("#result").html(x);
+        }
+        on_ng_ready();
+    }, function errorCallback(response) {
+        $scope.org = response;
+    });
+}])

@@ -16,6 +16,7 @@
     "bootstrap": "~3.3.6",
     "angular-bootstrap": "~1.2.5",
     "fontawesome": "4.5.x",
-    "waypoints": "^4.0.0"
+    "waypoints": "^4.0.0",
+    "angular-masonry": "^0.16.0"
   }
 }
