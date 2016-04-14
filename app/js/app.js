@@ -19,26 +19,26 @@ phonecatApp.config(['$routeProvider', '$sceDelegateProvider', function($routePro
     $sceDelegateProvider.resourceUrlWhitelist(['**']);
     $routeProvider.
     when('/phones', {
-        templateUrl: 'http://7xq9bs.com1.z0.glb.clouddn.com/angular/partials/phone-list.html',
+        templateUrl: cdn_path + 'partials/phone-list.html',
         controller: 'PhoneListCtrl',
         title: 'test',
     }).
     when('/phones/:phoneId', {
-        templateUrl: 'http://7xq9bs.com1.z0.glb.clouddn.com/angular/partials/phone-detail.html',
+        templateUrl: cdn_path + 'partials/phone-detail.html',
         controller: 'PhoneDetailCtrl',
         title: "test"
     }).
     when('/test', {
-        templateUrl: 'http://7xq9bs.com1.z0.glb.clouddn.com/angular/partials/alert-demo.html',
+        templateUrl: cdn_path + 'partials/alert-demo.html',
         controller: 'AlertDemoCtrl',
         title: 'test'
     }).
     when('/index', {
-        templateUrl: 'http://7xq9bs.com1.z0.glb.clouddn.com/angular/partials/welcome.html',
+        templateUrl: cdn_path + 'partials/welcome.html',
         controller: 'WelcomeCtrl'
     }).
     when('/orgs/:cat/:org', {
-        templateUrl: 'http://7xq9bs.com1.z0.glb.clouddn.com/angular/partials/article.html',
+        templateUrl: cdn_path + 'partials/article.html',
         controller: 'ArticleCtrl'
     }).
     otherwise({

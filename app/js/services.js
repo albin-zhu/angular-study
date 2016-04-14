@@ -13,7 +13,7 @@ servs.factory('Phone', ['$resource', function($resource){
 
 servs.factory('DataProxy', ['$resource', function($resource){
     // support http,https,etc.
-    return $resource('http://7xq9bs.com1.z0.glb.clouddn.com/angular/data/:act.json', {}, {
+    return $resource(cdn_path + 'data/:act.json', {}, {
         query: {method: 'GET', params:{act:'common'}, isArray:false}
     });
 }]);

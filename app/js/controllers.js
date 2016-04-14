@@ -37,6 +37,9 @@ ctrls.controller('AlertDemoCtrl', ['$scope', function($scope){
 
 ctrls.controller('WelcomeCtrl', ['$scope', 'DataProxy', '$uibModal', function($scope, DataProxy, $uibModal) {
     $scope.active = 0;
+    $scope.cdn_path = cdn_path;
+    $scope.query = {};
+    $scope.query.cat = "";
     DataProxy.get({act:"carousel"}, function(carousel){
         $scope.slides = carousel.slides;
         $scope.myInterval = 5000;
@@ -55,15 +58,11 @@ ctrls.controller('WelcomeCtrl', ['$scope', 'DataProxy', '$uibModal', function($s
          
     });
 
-    $scope.setQuery = function(a, v) {
-        $scope.query = {};
-        $scope.query[a] = v;
-    }
 
     $scope.open = function(data) {
         var modalInstance = $uibModal.open({
             animation: true,
-            templateUrl: "partials/preview.html",
+            templateUrl: cdn_path + "partials/preview.html",
             controller: "ModalCtrl",
             resolve: {
                 items: function () {
@@ -79,6 +78,7 @@ ctrls.controller('WelcomeCtrl', ['$scope', 'DataProxy', '$uibModal', function($s
 
 ctrls.controller('ModalCtrl', ['$scope', 'items', function($scope, items){
     $scope.item = items;
+    $scope.cdn_path = cdn_path;
     setTimeout(function(){
                 $('.screen.flexslider').flexslider({
                     prevText: '<i class="fa fa-angle-left"></i>',
@@ -100,7 +100,7 @@ ctrls.controller('ModalCtrl', ['$scope', 'items', function($scope, items){
 ctrls.controller('ArticleCtrl', ['$scope', '$routeParams', '$http', function($scope, $routeParams, $http){
     $http({
         method: 'GET',
-        url: 'orgs/' + $routeParams.cat + '/' + $routeParams.org
+        url: cdn_path + 'orgs/' + $routeParams.cat + '/' + $routeParams.org
     }).then(function successCallback(code) {
         var orgParser = new Org.Parser();
         try {

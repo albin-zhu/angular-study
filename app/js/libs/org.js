@@ -1346,7 +1346,8 @@ var Org = (function () {
                 this.inlineTag("span", sectionNumberText, {
                   "class": "section-number"
                 }) : "";
-          var header = this.getNodeTextContent(tocItem.headerNode);
+          
+          var header = this.inlineTag('i', this.getNodeTextContent(tocItem.headerNode), {class:"fa"});
           var headerLink = this.inlineTag("a", sectionNumber + header, {
             href: "#header-" + sectionNumberText.replace(/\./g, "-"),
             class: "scrollto"
@@ -1507,7 +1508,18 @@ var Org = (function () {
       return this.inlineTag("del", childText);
     },
 
+
+    faFont: function(node) {
+      var font = this.getNodeTextContent(node);
+      var style = node.src;
+      return this.inlineTag("i", font, {class:style});
+    },
+
     convertLink: function (node, childText, auxData) {
+      if(node.src.indexOf("fa ") == 0) {
+        return this.faFont(node); 
+      }
+
       if (this.imageExtensionPattern.exec(node.src)) {
         var imgText = this.getNodeTextContent(node);
         return this.inlineTag("img", null, {

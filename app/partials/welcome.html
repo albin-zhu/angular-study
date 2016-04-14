@@ -100,7 +100,7 @@
 				</header>
 				<div class="scrollimation fade-up">
 					<div class="img-wrapper">
-						<img class="img-responsive img-center" src="img/emcs_screen.png" alt="" />
+						<img class="img-responsive img-center" src="{{cdn_path}}/img/emcs_screen.png" alt="" />
 						<p class="text-center on-hover"><a class="btn btn-meflat icon-right" href="#external">Visit Website<i class="fa fa-arrow-right"></i></a></p>
 					</div>
 				</div>				
@@ -118,7 +118,7 @@
 				</header>				
 				<div class="row">				
 					<div class="col-sm-8 col-sm-offset-2">					
-						<img class="img-responsive img-center img-circle scrollimation fade-left" src="assets/about.jpg" alt="" />				
+						<img class="img-responsive img-center img-circle scrollimation fade-left" src="{{cdn_path}}/img/favico.jpg" alt="" />				
 						<p class="text-center scrollimation fade-in">一个不喜欢折腾的魔都现役程序猿，除了写代码与游戏，业余生活非常简单，喜欢篮球（与基友）、书法（无聊时写写字）、摄影（给老婆拍照）。 </p>	
 					</div>					
 				</div>				
@@ -136,15 +136,11 @@
 					<p>没事记点东西</p>				
 				</header>				
 				<!--==== Portfolio Filters ====-->
-				<div id="filter-works">
-					<ul>
-						<li ng-repeat="cat in cats">
-							<button ng-click="setQuery('cat', cat)">{{cat}}</button>
-						</li>
-						<li>
-							<button ng-click="setQuery('cat', '')">ALL</button>
-						</li>
-					</ul>
+				<div id="filter-works" class="text-center">
+					<div class="btn-group">
+	        			<label class="btn btn-primary" ng-model="query.cat" ng-repeat="cat in cats" uib-btn-radio="'{{cat}}'">{{cat}}</label>
+	        			<label class="btn btn-primary" ng-model="query.cat" uib-btn-radio="''">ALL</label>
+	    			</div>					
 				</div><!--End portfolio filters -->				
 			</div><!--End portfolio header -->			
 			<div class="container masonry-wrapper">			
@@ -181,7 +177,7 @@
 					<sup><i class="fa fa-quote-right fa-fw text-color"></i></sup>				
 				</header>
 				
-				<form  id="contact-form" class="bl_form text-center" action="contact.php" method="post" novalidate>
+				<form  id="contact-form" class="bl_form text-center" action="/" method="post" novalidate>
 					<span class="field-wrap scrollimation fade-right">
 						<label class="control-label" for="contact-name">Name</label>
 						<input id="contact-name" name="contactName" type="text" class="label_better requiredField" data-new-placeholder="Name" placeholder="Name" data-error-empty="*Enter your name">
@@ -218,11 +214,11 @@
 				
 					<div class="col-sm-6">
 						<ul class="social-links">
-							<li class="scrollimation fade-right d4"><a href="#link"><i class="fa fa-twitter fa-fw"></i></a></li>
-							<li class="scrollimation fade-right d3"><a href="#link"><i class="fa fa-facebook fa-fw"></i></a></li>
-							<li class="scrollimation fade-right d2"><a href="#link"><i class="fa fa-google-plus fa-fw"></i></a></li>
-							<li class="scrollimation fade-right d1"><a href="#link"><i class="fa fa-dribbble fa-fw"></i></a></li>
-							<li class="scrollimation fade-right"><a href="#link"><i class="fa fa-linkedin fa-fw"></i></a></li>
+							<li class="scrollimation fade-right d4"><a href="https://twitter.com/zybyy"><i class="fa fa-twitter fa-fw"></i></a></li>
+							<li class="scrollimation fade-right d3"><a href="https://www.facebook.com/hialbin"><i class="fa fa-facebook fa-fw"></i></a></li>
+							<li class="scrollimation fade-right d2"><a href="https://plus.google.com/101306452641313734986"><i class="fa fa-google-plus fa-fw"></i></a></li>
+							<li class="scrollimation fade-right d1"><a href="https://dribbble.com/"><i class="fa fa-dribbble fa-fw"></i></a></li>
+							<li class="scrollimation fade-right"><a href="https://www.linkedin.com/"><i class="fa fa-linkedin fa-fw"></i></a></li>
 						</ul>
 					</div>
 					
