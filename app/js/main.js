@@ -1,26 +1,25 @@
 cdn_path = "http://127.0.0.1:8000/app/"
 
 function main(){
-	document.write('<link rel="stylesheet" href="'+cdn_path+'bower_components/font-awesome/css/font-awesome.css">' +
-    '<link rel="stylesheet" href="'+cdn_path+'bower_components/bootstrap/dist/css/bootstrap.css">' +
-    '<script src="'+cdn_path+'bower_components/jquery/dist/jquery.js"></script>' +
-    '<script src="'+cdn_path+'bower_components/angular/angular.js"></script>' +
-    '<script src="'+cdn_path+'bower_components/angular-resource/angular-resource.js"></script>' +
-    '<script src="'+cdn_path+'bower_components/angular-animate/angular-animate.js"></script>' +
-    '<script src="'+cdn_path+'bower_components/angular-route/angular-route.js"></script>' +
-    '<script src="'+cdn_path+'bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>' +
-    '<script src="'+cdn_path+'bower_components/waypoints/lib/jquery.waypoints.js"></script>' +
-    '<script src="'+cdn_path+'bower_components/jquery-bridget/jquery-bridget.js"></script>' +
-    '<script src="'+cdn_path+'bower_components/ev-emitter/ev-emitter.js"></script>' +
-    '<script src="'+cdn_path+'bower_components/desandro-matches-selector/matches-selector.js"></script>' +
-    '<script src="'+cdn_path+'bower_components/fizzy-ui-utils/utils.js"></script>' +
-    '<script src="'+cdn_path+'bower_components/get-size/get-size.js"></script>' +
-    '<script src="'+cdn_path+'bower_components/outlayer/item.js"></script>' +
-    '<script src="'+cdn_path+'bower_components/outlayer/outlayer.js"></script>' +
-    '<script src="'+cdn_path+'bower_components/masonry/masonry.js"></script>' +
-    '<script src="'+cdn_path+'bower_components/imagesloaded/imagesloaded.js"></script>' +
-    '<script src="'+cdn_path+'bower_components/angular-masonry/angular-masonry.js"></script>' +
-    '<script src="'+cdn_path+'bower_components/angular-sanitize/angular-sanitize.js"></script>' +
+	document.write('<link rel="stylesheet" href="'+cdn_path+'dist/font-awesome.min.css">' +
+    '<link rel="stylesheet" href="'+cdn_path+'dist/bootstrap.min.css">' +
+    '<script src="'+cdn_path+'dist/jquery.min.js"></script>' +
+    '<script src="'+cdn_path+'dist/angular.min.js"></script>' +
+    '<script src="'+cdn_path+'dist/angular-resource.min.js"></script>' +
+    '<script src="'+cdn_path+'dist/angular-animate.min.js"></script>' +
+    '<script src="'+cdn_path+'dist/angular-route.min.js"></script>' +
+    '<script src="'+cdn_path+'dist/ui-bootstrap-tpls.min.js"></script>' +
+    '<script src="'+cdn_path+'dist/jquery-bridget.js"></script>' +
+    '<script src="'+cdn_path+'dist/ev-emitter.js"></script>' +
+    '<script src="'+cdn_path+'dist/matches-selector.js"></script>' +
+    '<script src="'+cdn_path+'dist/utils.js"></script>' +
+    '<script src="'+cdn_path+'dist/get-size.js"></script>' +
+    '<script src="'+cdn_path+'dist/item.js"></script>' +
+    '<script src="'+cdn_path+'dist/outlayer.js"></script>' +
+    '<script src="'+cdn_path+'dist/masonry.pkgd.min.js"></script>' +
+    '<script src="'+cdn_path+'dist/imagesloaded.pkgd.min.js"></script>' +
+    '<script src="'+cdn_path+'dist/angular-masonry.js"></script>' +
+    '<script src="'+cdn_path+'dist/angular-sanitize.min.js"></script>' +
     '<script src="'+cdn_path+'js/app.js"></script>' +
     '<script src="'+cdn_path+'js/animations.js"></script>' +
     '<script src="'+cdn_path+'js/controllers.js"></script>' +
